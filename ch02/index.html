@@ -8,15 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <button v-on:click="increase(2, $event)" type="button" name="button">Click me</button>
-      <button v-on:click="counter++" type="button" name="button">Click me</button>
-      <p>{{counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
-      <p v-on:mousemove="updateCoordinates">
-        Coordinates: {{ x }} / {{ y }}
-        - <span v-on:mousemove.stop="">Dead spot</span>
-      </p>
-      <input type="text" v-on:keyup.enter="alertMe" name="" value="">
-      </menu>
+      <input type="text" name="" value="" v-model="name">
+      <p>{{ name }}</p>
 
 
     </div>
@@ -28,24 +21,9 @@
   new Vue({
     el: '#app',
     data: {
-      counter: 0,
-      x: 0,
-      y: 0,
+      name: 'Max'
+    }
 
-    },
-    methods: {
-      increase: function(step, event) {
-        this.counter += step;
-      },
-      updateCoordinates: function(event) {
-        this.x = event.clientX;
-        this.y = event.clientY;
-      },
-      alertMe: function() {
-        alert('Alert!')
-      }
-
-    },
 
 
 
