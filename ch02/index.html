@@ -8,18 +8,24 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <p>{{ title }}</p>
+      <p>{{ sayHello() }}</p>
 
     </div>
 
 
 
 <script>
+
   new Vue({
     el: '#app',
     data: {
       title: 'Hello World!',
     },
+    methods: {
+      sayHello: function() {
+        return 'Hello!';
+      }
+    }
 
 
   })
