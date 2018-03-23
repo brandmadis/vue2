@@ -8,10 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <h1 v-once>{{ title }}</h1>
-      <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
-      <hr>
-      <p v-html="finishedLink"></p>
+      <button v-on:click="increase" type="button" name="button">Click me</button>
+      <p>{{counter}}</p>
+      </menu>
+
 
     </div>
 
@@ -22,16 +22,15 @@
   new Vue({
     el: '#app',
     data: {
-      title: 'Hello World!',
-      link: 'http://google.com',
-      finishedLink: '<a href="http://gooogle.com">Google</a>'
+      counter: 0
+
     },
     methods: {
-      sayHello: function() {
-        this.title = 'Hello!';
-        return this.title; // Proxy property access
+      increase: function() {
+        this.counter++;
       }
     }
+
 
 
   })
