@@ -14,6 +14,7 @@
         Coordinates: {{ x }} / {{ y }}
         - <span v-on:mousemove.stop="">Dead spot</span>
       </p>
+      <input type="text" v-on:keyup.enter="alertMe" name="" value="">
       </menu>
 
 
@@ -39,6 +40,9 @@
         this.x = event.clientX;
         this.y = event.clientY;
       },
+      alertMe: function() {
+        alert('Alert!')
+      }
 
     },
 
