@@ -8,11 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <button v-on:click="counter++">Increase</button>
-      <button v-on:click="counter--">Decrease</button>
-      <button v-on:click="secondCounter++">Increment Second</button>
-      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
-      <p>Result: {{ result() }} | {{ output }}</p>
+      <button @click="changeLink">Click to Change Link</button>
+      <a :href="link">Link</a>
 
     </div>
 
