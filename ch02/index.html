@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <div class="demo" @click="attachRed = !attachRed" :class="{red:attachRed}"></div>
+      <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
       <div class="demo":class="{red:attachRed}"></div>
       <div class="demo"></div>
 
@@ -36,6 +36,14 @@
     data: {
       attachRed: false,
     },
+    computed: {
+      divClasses: function() {
+        return {
+          red: this.attachRed,
+          blue: !this.attachRed
+        }
+      }
+    }
 
 
 
