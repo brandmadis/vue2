@@ -11,8 +11,7 @@
       <button v-on:click="counter++">Increase</button>
       <button v-on:click="counter--">Decrease</button>
       <button v-on:click="secondCounter++">Increment Second</button>
-      <p>Counter: {{ counter }}</p>
-      <p>Second: {{ secondCounter }}</p>
+      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
       <p>Result: {{ result() }} | {{ output }}</p>
 
     </div>
@@ -32,6 +31,14 @@
       output: function() {
         console.log("computed")
         return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+      }
+    },
+    watch: {
+      counter: function(value) {
+        var vm = this;
+        setTimeout(function() {
+          vm.counter = 0;
+        }, 2000)
       }
     },
     methods: {
