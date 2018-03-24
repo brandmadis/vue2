@@ -3,13 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>vue</title>
+
   </head>
+  <style>
+  .demo {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    margin: 10px;
+  }
+  .red {background-color: red}
+  .green {background-color: green}
+  .blue {background-color: blue}
+  </style>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <div id="app">
-      <button @click="changeLink">Click to Change Link</button>
-      <a :href="link">Link</a>
+      <div class="demo" @click="attachRed = !attachRed" :class="{red:attachRed}"></div>
+      <div class="demo":class="{red:attachRed}"></div>
+      <div class="demo"></div>
 
     </div>
 
@@ -20,33 +34,8 @@
   new Vue({
     el: '#app',
     data: {
-      counter: 0,
-      secondCounter: 0,
-
+      attachRed: false,
     },
-    computed: {
-      output: function() {
-        console.log("computed")
-        return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
-      }
-    },
-    watch: {
-      counter: function(value) {
-        var vm = this;
-        setTimeout(function() {
-          vm.counter = 0;
-        }, 2000)
-      }
-    },
-    methods: {
-      result: function() {
-        console.log("method")
-        return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
-      }
-    }
-
-
-
 
 
 
