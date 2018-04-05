@@ -9,7 +9,7 @@ new Vue({
   },
   methods: {
     startEffect: function() {
-      console.log("start Effect")
+      console.log(this.highlight)
     },
     startProgress: function(){
       console.log("start progress")
