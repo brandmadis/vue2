@@ -22,16 +22,26 @@
           <p>{{ value }}</p>
       </div>
   </div>
+</div>
 
 <script type="text/javascript">
 new Vue({
   el: "#exercise",
   data:{
-    value: '',
+    value: 0,
   },
-  methods:{
-    },
-
+  computed:{
+    result: function(){
+      return this.value == 10 ? 'done' : 'not there yet';
+    }
+  },
+  watch: {
+    result: function() {
+      var vm = this;
+      setTimeout(function(){
+        vm.value = 10
+      },1000);
+    }
   }
 })
 
